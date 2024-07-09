@@ -4,13 +4,16 @@ import './Sidebar.css';
 import {assets} from  '../../assets/assets'
 const Sidebar = ()=>{
     const [extended, setExtended]=useState(false);
+    
     const collapse=()=>{
         setExtended(prev=>!prev);
     }
+
     return (
     <div className="sidebar">
         <div className="top">
-            <img onClick = {collapse} className="menu"  src={assets.menu_icon} alt=""/>
+            {/* added collapse function */}
+            <img onClick = {collapse} className="menu"  src={assets.menu_icon} alt=""/>  
             <div className="new-chat">
                 <img src={assets.plus_icon} alt =""/>
                 {extended?<p>New Chat</p> : null}
