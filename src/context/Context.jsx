@@ -15,18 +15,21 @@ const ContextProvider = (props)=>{
 
     }
 
+    function formatText(text) {
+        text = text.replace(/## (.+)/g, '<h2>$1</h2>');
+        text = text.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+        text = text.replace(/\* (.+)/g, '<li>$1</li>');
+        text = text.replace(/(<li>.+<\/li>)/g, '<ul>$1</ul>');
+        return text;
+    }
+
     const  onSent = async(prompt)=>{
         setResultData("");
         setLoading(true);
         setShowResult(true);
         setRecentPrompt(input);
-        const response = await run(input);
-        let responseArray=response.split("**");
-        let newResponse;
-        for(let i=0; i<responseArray.length; i++){
-            if(i==0 || i%2!=1) newResponse+=responseArray[i];
-            else  newResponse += "<b>"+responseArray[i]+"</b>"
-        }
+        let response = await run(input);
+        let newResponse=formatText(response.text());
         setResultData(newResponse);
         setLoading(false);
         setInput("");
