@@ -224,3 +224,41 @@
     font-size: 16px;
     padding: 10px;
 }
+
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .card {
+    background-color: black; 
+    
+}
+.dark-mode .card p
+{
+    color:white;
+}
+.dark-mode .card:hover
+{
+    background-color: #131324;
+}
+
+.dark-mode .search-box {
+    background-color: #333333; 
+    color: #ffffff; 
+}
+.dark-mode .search-box img
+{
+    color: white;
+    background-color: white;
+}
+
+.dark-mode .search-box input::placeholder {
+    color: white; 
+}
+.dark-mode input {
+    color: white; 
+
+}
