@@ -13,6 +13,8 @@ Gemini Clone is a web application built using React and Vite. It is designed to 
 
 ## Getting Started
 
+DEPLOYMENT[https://gemini-rose-eta.vercel.app/]
+
 ### Prerequisites
 
 - Node.js (v14 or later)
