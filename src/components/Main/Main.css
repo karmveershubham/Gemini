@@ -198,9 +198,7 @@
 }
 
 
-/* adding styles for the dark and light mode */
-
-
+/* adding styles for the dark and light mode in main.jsx */
 .dark-mode {
     background-color: #1e1e1e;
     color: #ffffff;
