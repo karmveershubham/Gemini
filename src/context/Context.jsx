@@ -12,7 +12,14 @@ const ContextProvider = (props)=>{
     const [resultData, setResultData]=useState("");
 
     const delayPara=(index, nextWord)=>{
+        setTimeout(function(){
+            setResultData(prev=>prev+nextWord);
+        }, 75*index)
+    }
 
+    const newChat =()=>{
+        setLoading(false);
+        setShowResult(false);
     }
 
     function formatText(text) {
@@ -23,14 +30,26 @@ const ContextProvider = (props)=>{
         return text;
     }
 
-    const  onSent = async(prompt)=>{
+    const onSent = async(prompt)=>{
         setResultData("");
         setLoading(true);
         setShowResult(true);
-        setRecentPrompt(input);
-        let response = await run(input);
+        let response;
+        if(prompt!==undefined){
+            response = await run(prompt);
+            setRecentPrompt(prompt);
+        } else {
+            setPrevPrompts(prev=>[...prev, input]);
+            setRecentPrompt(input);
+            response= await run(input);
+        }
         let newResponse=formatText(response.text());
-        setResultData(newResponse);
+        // set result data using delaypara function
+        let newerResponse=newResponse.split(" ");
+        for(let i=0;i<newerResponse.length; i++){
+            const nextWord=newerResponse[i];
+            delayPara(i, nextWord+" ");
+        }
         setLoading(false);
         setInput("");
     }
@@ -47,7 +66,7 @@ const ContextProvider = (props)=>{
         resultData,
         input,
         setInput,
-
+        newChat
     }
 
     return (
