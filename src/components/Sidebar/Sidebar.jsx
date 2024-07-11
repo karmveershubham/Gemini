@@ -17,7 +17,7 @@ const Sidebar = ()=>{
     }
 
     return (
-    <div className={`sidebar ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+    <div className={`sidebar ${isDarkMode ? 'dark-mode' : 'light-mode'}`} id={isDarkMode?'darkside':null}>
         <div className="top">
             {/* added collapse function */}
             <img onClick = {collapse} className="menu"  src={assets.menu_icon} alt=""/>  

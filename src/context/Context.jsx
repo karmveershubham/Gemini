@@ -11,7 +11,7 @@ const ContextProvider = (props)=>{
     const [loading, setLoading]=useState(false);
     const [resultData, setResultData]=useState("");
     // Added state for theme
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true);
 
     const delayPara=(index, nextWord)=>{
         setTimeout(function(){

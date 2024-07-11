@@ -13,6 +13,9 @@ import message_icon from './message_icon.png'
 import code_icon from './code_icon.png'
 import send_icon from './send_icon.png'
 import gemini_icon from './gemini_icon.png'
+import light_mode from './light-mode.png'
+import dark_mode from './dark-mode.png'
+const GEMINI_API_KEY="AIzaSyBLHc6t6fY0rX8hGYHkXM-3p15dz9y8ntk";
 
 export const assets = {
     history_icon,
@@ -29,5 +32,10 @@ export const assets = {
     message_icon,
     code_icon,
     send_icon,
-    gemini_icon
+    gemini_icon,
+    light_mode,
+    dark_mode,
+    GEMINI_API_KEY,
 }
+
+

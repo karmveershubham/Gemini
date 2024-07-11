@@ -3,7 +3,6 @@
     min-height: 100vh;
     padding-bottom: 15vh;
     position: relative;
-
 }
 .main .nav{
     display: flex;
@@ -58,7 +57,7 @@
     width: 35px;
     padding: 5px;
     position: absolute;
-    background-color: white;
+    background-color: rgb(243, 242, 242);
     border-radius: 20px;
     bottom: 10px;  /*make image align in botom right */
     right: 10px;    /*make image align in botom right */
@@ -199,17 +198,6 @@
 
 
 /* adding styles for the dark and light mode in main.jsx */
-.dark-mode {
-    background-color: #1e1e1e;
-    color: #ffffff;
-}
-
-.light-mode {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-
 .nav-controls {
     display: flex;
     align-items: center;
@@ -225,23 +213,29 @@
     padding: 10px;
 }
 
+.nav-controls button img{
+    padding-top: 10px;
+    padding-right: 5px;
+    width: 48px;
+}
+
 
 /* Dark Mode */
+.gem{
+    filter: invert(80%);
+}
 .dark-mode {
     background-color: #1e1e1e;
     color: #ffffff;
 }
 
 .dark-mode .card {
-    background-color: black; 
-    
+    background-color: black;  
 }
-.dark-mode .card p
-{
+.dark-mode .card p{
     color:white;
 }
-.dark-mode .card:hover
-{
+.dark-mode .card:hover{
     background-color: #131324;
 }
 
@@ -249,10 +243,8 @@
     background-color: #333333; 
     color: #ffffff; 
 }
-.dark-mode .search-box img
-{
-    color: white;
-    background-color: white;
+.dark-mode .search-box img{
+    filter: invert(100%);
 }
 
 .dark-mode .search-box input::placeholder {
@@ -260,5 +252,8 @@
 }
 .dark-mode input {
     color: white; 
-
 }
+.dark-mode .card img{
+    filter: invert(100%);
+}
+

@@ -11,13 +11,13 @@ const Main=()=>{
     }
 
     return (
-        <div className={`main ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+        <div className={`main ${isDarkMode ? 'dark-mode' : 'light-mode'}`} >
             <div className="nav">
-                <p>Gemini</p>
+                <p class={isDarkMode?'gem' :null }>Gemini</p>
                 <div className="nav-controls">
                     {/* Added theme toggle button */}
                     <button onClick={toggleTheme}>
-                        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+                        {isDarkMode ? <img src={assets.light_mode}/> :  <img src={assets.dark_mode}/>}
                     </button>
                     <img src={assets.user_icon} alt="" />
                 </div>
