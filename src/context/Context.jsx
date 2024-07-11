@@ -10,6 +10,8 @@ const ContextProvider = (props)=>{
     const [showResult, setShowResult]=useState(false);
     const [loading, setLoading]=useState(false);
     const [resultData, setResultData]=useState("");
+    // Added state for theme
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const delayPara=(index, nextWord)=>{
         setTimeout(function(){
@@ -53,6 +55,10 @@ const ContextProvider = (props)=>{
         setLoading(false);
         setInput("");
     }
+    // Function to toggle dark mode
+    const toggleTheme = () => {
+        setIsDarkMode(prevMode => !prevMode);
+    }
 
     // onSent("What is React JS");
     const contextValue={
@@ -66,7 +72,10 @@ const ContextProvider = (props)=>{
         resultData,
         input,
         setInput,
-        newChat
+        newChat,
+        // Added theme-related values
+        isDarkMode,
+        toggleTheme
     }
 
     return (

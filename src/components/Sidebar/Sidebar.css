@@ -84,3 +84,22 @@
         display: none;
     }
 }
+
+/* Dark mode */
+.dark-mode .bottom-item
+{
+    background-color: white;
+}
+.dark-mode .menu
+{
+    background-color: white;
+}
+.dark-mode .recent-entry img
+{
+    background-color: white;
+}
+.dark-mode .recent-entry-text
+{
+    color: white;
+}
+
