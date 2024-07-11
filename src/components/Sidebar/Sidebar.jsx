@@ -6,6 +6,7 @@ import { Context } from "../../context/Context";
 const Sidebar = ()=>{
     const [extended, setExtended]=useState(false);
     const {onSent, prevPrompts,setRecentPrompt, newChat}=useContext(Context);
+    const { isDarkMode } = useContext(Context);
     
     const loadPrompt= async(prompt)=>{
         setRecentPrompt(prompt)
@@ -16,7 +17,7 @@ const Sidebar = ()=>{
     }
 
     return (
-    <div className="sidebar">
+    <div className={`sidebar ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
         <div className="top">
             {/* added collapse function */}
             <img onClick = {collapse} className="menu"  src={assets.menu_icon} alt=""/>  
@@ -31,7 +32,7 @@ const Sidebar = ()=>{
                         return (
                             <div onClick={()=>loadPrompt(item)}className="recent-entry">
                                 <img src={assets.message_icon} alt=""/>
-                                <p>{item.slice(0,18)}...</p>
+                                <p className="recent-entry-text">{item.slice(0,18)}...</p>
                             </div>
                         )
                     })}

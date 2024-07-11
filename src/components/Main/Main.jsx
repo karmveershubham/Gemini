@@ -3,18 +3,24 @@ import './Main.css'
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/Context";
 const Main=()=>{
-
-    const {onSent, recentPrompt, showResult, loading, resultData, setInput, input}=useContext(Context)
+//importing isDarkMode and toggleTheme
+    const {onSent, recentPrompt, showResult, loading, resultData, setInput, input,isDarkMode, toggleTheme}=useContext(Context)
 
     const onChangeInput=(e)=>{
         setInput(e.target.value);
     }
 
     return (
-        <div className="main">
+        <div className={`main ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
             <div className="nav">
                 <p>Gemini</p>
-                <img src={assets.user_icon} alt=""/>
+                <div className="nav-controls">
+                    {/* Added theme toggle button */}
+                    <button onClick={toggleTheme}>
+                        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+                    </button>
+                    <img src={assets.user_icon} alt="" />
+                </div>
             </div>
             <div className="main-container">
                 {!showResult ? 
